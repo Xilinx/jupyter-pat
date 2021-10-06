@@ -274,6 +274,103 @@ class poweradvantage:
                 0x00,
                 0x00,0x00,0x00]
 
+        elif (name == "VPK120") or (name == "VPK180"):
+
+            if module == "SC":
+
+                self.bus = [
+                    5,
+                    5,5,5,
+                    5,5,5,
+                    3,5,5,
+                    3,5,3,
+                    3,
+                    3,5,
+                    3,5,5]
+
+            else:
+                
+                self.bus = [
+                    5,
+                    5,5,5,
+                    5,5,5,
+                    3,5,5,
+                    3,5,3,
+                    3,
+                    3,5,
+                    3,5,5]
+
+            self.address = [
+                0x4a,
+                0x42,0x46,0x48,
+                0x4b,0x4c,0x4d,
+                0x40,0x43,0x49,
+                0x43,0x40,0x41,
+                0x45,
+                0x44,0x47,
+                0x42,0x45,0x41]
+
+            self.name = [
+                "VADJ_FMC",
+                "MGTAVCC","MGTAVTT","MGTVCCAUX",
+                "LPDMGTYAVCC","LPDMGTYAVTT","LPDMGTYVCCAUX",
+                "VCCINT","VCC1V5","VCC1V1_LP4",
+                "VCC_RAM_VCCINT_GT","VCCAUX","VCC_SOC",
+                "VCC_PSFP",
+                "VCC_PSLP_CPM5","VCC0_502",
+                "VCC_PMC","VCCO_MIO","VCCAUX_PMC"]
+
+            self.description = [
+                "FMC primary power supply",
+                "GTM transceiver primary analog power supply",
+                "GTM transceiver termination power supply",
+                "GTM transceiver auxiliary analog Quad PLL (QPLL) power supply",
+                "GTY transceiver primary analog power supply",
+                "GTY transceiver termination power supply",
+                "GTY transceiver auxiliary analog Quad PLL (QPLL) power supply",
+                "PL and AIE primary power supply",
+                "1.5V PL IO power supply",
+                "1.1V PL IO power supply",
+                "RAM and clocking network power supply",
+                "Auxiliary power supply",
+                "NOC and DDR controller primary power supply",
+                "PS Full-power domain power supply",
+                "PS Low-power domain power supply",
+                "PS IO power supply",
+                "PMC primary power supply",
+                "PMC and Low-power domain IO power supply",
+                "PMC auxiliary power supply"]
+
+            self.domain = [
+                "FMC Domain",
+                "Transceiver Domain","Transceiver Domain","Transceiver Domain",
+                "Transceiver Domain","Transceiver Domain","Transceiver Domain",
+                "PL Domain","PL Domain","PL Domain",
+                "PL Domain","System Domain","System Domain",
+                "FPD",
+                "LPD","LPD",
+                "PMC Domain","PMC Domain","PMC Domain"]
+
+            self.mOhm = [
+                2,
+                5,2,5,
+                5,2,5,
+                0.5,5,2,
+                2,5,0.5,
+                5,
+                5,5,
+                5,5,5]
+
+            self.flags = [
+                0x00,
+                0x00,0x00,0x00,
+                0x00,0x00,0x00,
+                FLAGS_6X_I,0x00,0x00,0x00,0x00,
+                0x00,0x00,0x00,
+                0x00,
+                0x00,0x00,
+                0x00,0x00,0x00]
+
             
     def help(self):
         print()
